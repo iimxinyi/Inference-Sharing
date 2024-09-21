@@ -24,6 +24,7 @@ pip install --upgrade diffusers transformers
 pip install torch
 pip install accelerate
 pip install protobuf
+pip install sentencepiece
 ```
 
 
