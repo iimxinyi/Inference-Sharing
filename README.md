@@ -16,7 +16,7 @@ Activate the created environment.
 conda activate LVM
 ```
 
-### Install Required Packages
+## Install Required Packages
 
 ```shell
 pip install sentence-transformers
