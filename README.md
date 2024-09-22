@@ -27,6 +27,8 @@ pip install accelerate==0.34.2
 pip install protobuf==5.25.2
 pip install sentencepiece==0.2.0
 pip install clip==0.2.0
+pip install openai-clip==1.0.1
+pip install torchvision==0.19.1
 ```
 
 
