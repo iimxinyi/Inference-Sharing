@@ -18,13 +18,14 @@ conda activate LVM
 
 ## Install Required Packages
 
+ubuntu==20.04, cuda==11.8
 ```shell
-pip install sentence-transformers
+pip install sentence-transformers==3.1.1
 pip install --upgrade diffusers transformers
-pip install torch
-pip install accelerate
-pip install protobuf
-pip install sentencepiece
+pip install torch==2.4.1
+pip install accelerate==0.34.2
+pip install protobuf==5.25.2
+pip install sentencepiece==0.2.0
 ```
 
 
