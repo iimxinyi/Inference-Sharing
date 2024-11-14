@@ -1,6 +1,6 @@
 # Inference-Sharing
 
-\bf{Target:} The aim is to explore the misalignment between users' intentions and the generated contents, with a focus on guiding the design of an efficient hybrid inference scheme.
+\bold{Target:} The aim is to explore the misalignment between users' intentions and the generated contents, with a focus on guiding the design of an efficient hybrid inference scheme.
 
 ## Environment Setup
 
