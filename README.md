@@ -4,7 +4,7 @@
 
 **Paper:** "QoS-Driven Hybrid Inference Scheme for Generative Diffusion Models in MEC-Enabled AI-Generated Content Networks." --Submitted to ICC 2025
 
-## Environment Setup
+## 1 Environment Setup
 
 Create a new conda environment.
 
@@ -12,7 +12,7 @@ Create a new conda environment.
 conda create --name LVM python==3.10
 ```
 
-## Activate Environment
+## 2 Activate Environment
 
 Activate the created environment.
 
@@ -20,7 +20,7 @@ Activate the created environment.
 conda activate LVM
 ```
 
-## Install Required Packages
+## 3 Install Required Packages
 
 ubuntu==20.04  cuda==11.8
 ```shell
