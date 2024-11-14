@@ -126,6 +126,6 @@ In line 689, "prompt_unchanged" is True if there is no common inference phase, a
 
 Get the generated images with varying common inference steps and varying similarity.
 
-'CLIP_Score.py`:
+`CLIP_Score.py`:
 
 Calculate the CLIP score to evaluated the image quality.
