@@ -112,7 +112,7 @@ This will navigate to the file `pipeline_stable_diffusion_3.py`.
 
 Replace `pipeline_stable_diffusion.py` with the file of the same name from this repository.
 
-## 5 Explanation of our Code Files
+## 5 Explanation of Our Code Files
 
 `pipeline_stable_diffusion.py`: 
 
@@ -134,9 +134,27 @@ Get the generated images with varying common inference steps and varying similar
 
 Calculate the CLIP score to evaluated the image quality.
 
-## 6 Explanation of our Results
+## 6 Explanation of Our Results
 
-All propmpts are listed in `Prompts.xlsx`
+All propmpts are listed in `Prompts.xlsx`.
+
+Our generated image is available in:
+
+OneDrive: 
+
+Baidu Netdisk:
+
+x_y_z_original/sharing.png
+
+x: Original prompt index
+
+y: New prompt index
+
+z: The number of sharing inference steps
+
+original: The original image with the prompt unchanged.
+
+sharing: The new image with the prompt changed.
 
 
 
