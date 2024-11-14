@@ -101,4 +101,6 @@ wheel                    0.44.0
 zipp                     3.20.2
 ```
 
+## 4 Locate and Modify StableDiffusion3Pipeline
+Open `Experiment1.py`
 
