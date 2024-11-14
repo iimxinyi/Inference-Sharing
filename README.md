@@ -160,7 +160,7 @@ sharing: The new image with the prompt changed.
 
 [Stable Diffusion 3 Medium](https://huggingface.co/stabilityai/stable-diffusion-3-medium-diffusers/tree/main): It is a wonferful image generation model.
 
-[DistributedDiffusion](https://github.com/HongyangDu/DistributedDiffusion): It is the first work for inference sharing in wireless networks.
+[DistributedDiffusion](https://github.com/HongyangDu/DistributedDiffusion): It is the first work on inference sharing in wireless networks.
 
 Thanks to all my partners!
 
