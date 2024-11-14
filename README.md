@@ -164,4 +164,6 @@ sharing: The new image with the prompt changed.
 
 Thanks to all my partners!
 
+If you have any confusion, please feel free to contact us!
+
 
