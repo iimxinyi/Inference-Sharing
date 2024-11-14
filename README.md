@@ -114,3 +114,18 @@ Replace `pipeline_stable_diffusion.py` with the file of the same name from this 
 
 ## 5 Explanation of our Code Files
 
+`pipeline_stable_diffusion.py`: 
+
+In line 668, the parameter "num_inference_steps" is the total number of inference steps used to generate a satisfied image.
+
+In line 688, the parameter "common_step" is the number of common inference steps (i.e., the shared steps).
+
+In line 689, "prompt_unchanged" is True if there is no common inference phase, and vice versa.
+
+`Experiment1.py`, `Experiment2.py`, `Experiment3.py`, `Experiment4.py`, `Experiment5.py`:
+
+Get the generated images with varying common inference steps and varying similarity.
+
+'CLIP_Score.py`:
+
+Calculate the CLIP score to evaluated the image quality.
