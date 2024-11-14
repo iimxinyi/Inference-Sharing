@@ -102,6 +102,11 @@ zipp                     3.20.2
 ```
 
 ## 4 Locate and Modify StableDiffusion3Pipeline
-Open `Experiment1.py` in your code editor. Hold down the `ctrl` key if you are on Linux or Windows, or the `command` key if you are on MacOS, and click on StableDiffusion3Pipeline.
+Open `Experiment1.py` in your code editor.
+
+Hold down the `ctrl` key if you are on Linux or Windows, or the `command` key if you are on MacOS, and click on StableDiffusion3Pipeline.
+
 ![Screenshot](/readme/step1.png)
+
+
 
