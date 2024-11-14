@@ -108,5 +108,9 @@ Hold down the `ctrl` key if you are on Linux or Windows, or the `command` key if
 
 ![image](/readme/step1.png)
 
+This will navigate to the file `pipeline_stable_diffusion_3.py`.
 
+Replace `pipeline_stable_diffusion.py` with the file of the same name from this repository.
+
+## 5 Explanation of our Code Files
 
