@@ -122,6 +122,10 @@ In line 688, the parameter "common_step" is the number of common inference steps
 
 In line 689, "prompt_unchanged" is True if there is no common inference phase, and vice versa.
 
+`Promps_Similarity.py`:
+
+Get the similarity score between the public and personal prompts.
+
 `Experiment1.py`, `Experiment2.py`, `Experiment3.py`, `Experiment4.py`, `Experiment5.py`:
 
 Get the generated images with varying common inference steps and varying similarity.
@@ -129,3 +133,5 @@ Get the generated images with varying common inference steps and varying similar
 `CLIP_Score.py`:
 
 Calculate the CLIP score to evaluated the image quality.
+
+
