@@ -134,4 +134,9 @@ Get the generated images with varying common inference steps and varying similar
 
 Calculate the CLIP score to evaluated the image quality.
 
+## 6 Explanation of our Results
+
+All propmpts are listed in `Prompts.xlsx`
+
+
 
