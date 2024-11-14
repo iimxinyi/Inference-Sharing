@@ -113,7 +113,7 @@ personal_prompts = [
 ]
 
 # Demo
-image_path = "./Images/sharing.png"
+image_path = "./Demo/sharing.png"
 text = "A cat is sleeping peacefully on a sunlit window sill."
 clip_score = compute_image_text_alignment(image_path, text)
 print(clip_score)
