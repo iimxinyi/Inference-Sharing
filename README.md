@@ -22,7 +22,7 @@ conda activate LVM
 
 ## Install Required Packages
 
-ubuntu==20.04, cuda==11.8
+ubuntu==20.04 cuda==11.8
 ```shell
 pip install sentence-transformers==3.1.1
 pip install --upgrade diffusers transformers
