@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/1e180f24-bdb8-475d-863d-053a01af01e2)# Inference-Sharing
+# Inference-Sharing
 
 **Target:** The aim is to explore the misalignment between users' intentions and the generated contents (i.e., the combined effects of common inference steps and the similarity between public and personal prompts), with a focus on guiding the design of an efficient hybrid inference scheme.
 
@@ -106,7 +106,7 @@ Open `Experiment1.py` in your code editor.
 
 Hold down the `ctrl` key if you are on Linux or Windows, or the `command` key if you are on MacOS, and click on StableDiffusion3Pipeline.
 
-![Screenshot](/readme/step1.png)
+![image](/readme/step1.png)
 
 
 
