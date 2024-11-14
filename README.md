@@ -1,6 +1,6 @@
 # Inference-Sharing
 
-**Target:** The aim is to explore the misalignment between users' intentions and the generated contents, with a focus on guiding the design of an efficient hybrid inference scheme.
+**Target:** The aim is to explore the misalignment between users' intentions and the generated contents (i.e., the combined effects of common inference steps and the similarity between public and personal prompts), with a focus on guiding the design of an efficient hybrid inference scheme.
 
 **Paper:** "QoS-Driven Hybrid Inference Scheme for Generative Diffusion Models in MEC-Enabled AI-Generated Content Networks." --Submitted to ICC 2025
 
