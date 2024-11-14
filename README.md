@@ -150,7 +150,7 @@ Image naming rules：
 x_y_z_original/sharing.png
 x: Original prompt index
 y: New prompt index
-z: The number of sharing inference steps
+z: The number of common inference steps
 original: The original image with the prompt unchanged.
 sharing: The new image with the prompt changed.
 ```
