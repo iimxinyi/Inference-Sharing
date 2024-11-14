@@ -1,4 +1,5 @@
 import os
+import re
 import clip
 import torch
 import numpy as np
@@ -49,29 +50,26 @@ def read_excel(file_path):
 def write_excel(file_path, workbook):
     workbook.save(file_path)
 
-def process_images(folder_path):
-    for filename in os.listdir(folder_path):
-        if filename.endswith("_sharing.png"):
-            parts = filename.split('_')
-            if len(parts) == 4:
-                y_index = int(parts[1])
-                if y_index < len(prompts):
-                    image_path = os.path.join(folder_path, filename)
-                    text = prompts[y_index]
-                    similarity = compute_image_text_alignment(image_path, text)
-                    print(f"File: {filename}, Text: '{text}', CLIP: {similarity}")
-                else:
-                    print(f"File: {filename}Error1")
-            else:
-                print(f"File: {filename}Error2")
-
-def process_images_and_update_excel(folder_path, excel_path):
+def process_images_and_update_excel(folder_path, excel_path, prompt):
+    prompts = prompt
     process_percentage = 0
     workbook = read_excel(excel_path)
 
+    seed_pattern = re.compile(r'seed(\d+)')
+    prompt_type_pattern = re.compile(r'(personal_prompt|public_prompt)')
+
+    seed_match = seed_pattern.search(folder_path)
+    prompt_type_match = prompt_type_pattern.search(folder_path)
+
+    if seed_match and prompt_type_match:
+        seed = seed_match.group(1)
+        prompt_type = prompt_type_match.group(1)
+    else:
+        raise ValueError("Unable to find seed and prompt type in folder path.")
+
     for filename in os.listdir(folder_path):
         if filename.endswith("sharing.png"):
-            process_percentage = process_percentage + 1
+            process_percentage += 1
             parts = filename.split('_')
             if len(parts) == 4:
                 x, y, z, _ = parts
@@ -81,16 +79,17 @@ def process_images_and_update_excel(folder_path, excel_path):
                     text = prompts[y]
                     similarity = compute_image_text_alignment(image_path, text)
                     similarity_value = float(similarity)
-                    sheet = workbook[f"prompt{x}"]
+                    sheet_name = f"seed{seed}_{prompt_type}{x}"
+                    sheet = workbook[sheet_name]
                     sheet.cell(row=y+2, column=z+2).value = similarity_value
-                    print(process_percentage, "/580")
+                    print(f"{process_percentage} processed")
                     write_excel(excel_path, workbook)
                 else:
                     print(f"File: {filename} has an index out of the range of the prompts list.")
             else:
                 print(f"File: {filename} has an incorrect format.")
 
-prompts = [
+personal_prompts = [
     "A cat is sleeping peacefully on a sunlit window sill.",
     "A cat is playing with a ball of yarn in a cozy living room.",
     "A cat is sitting on a bookshelf surrounded by books.",
@@ -114,14 +113,47 @@ prompts = [
 ]
 
 # Demo
-# image_path = "/Users/imxinyi/Desktop/Image/0/0_8_20_sharing.png"
-# text = "A dog lounges lazily on a patio during a summer afternoon."
-# clip_score = compute_image_text_alignment(image_path, text)
-# print(clip_score)
+image_path = "./Images/sharing.png"
+text = "A cat is sleeping peacefully on a sunlit window sill."
+clip_score = compute_image_text_alignment(image_path, text)
+print(clip_score)
 
-excel_path = '/Users/imxinyi/Desktop/data.xlsx'
-base_folder_path = '/Users/imxinyi/Desktop/Image/'
-folder_paths = [f"{base_folder_path}prompt{str(i)}/" for i in range(20)]
-for index, folder_path in enumerate(folder_paths):
-    print(index)
-    process_images_and_update_excel(folder_path, excel_path)
+# Experiment 1
+# excel_path = '/root/dataDisk/Data/Data1.xlsx'
+# base_folder_path = '/root/dataDisk/Experiment1/seed2024/personal_prompt'
+# folder_paths = [f"{base_folder_path}{str(i)}/" for i in range(20)]
+# for index, folder_path in enumerate(folder_paths):
+#     print(index)
+#     process_images_and_update_excel(folder_path, excel_path, personal_prompts)
+
+# Experiment 2
+# excel_path = '/root/dataDisk/Data/Data2.xlsx'
+# base_folder_path = '/root/dataDisk/Experiment2/'
+# folder_paths = [f"{base_folder_path}seed{str(i)}/public_prompt0/" for i in range(1,6)]
+# for index, folder_path in enumerate(folder_paths):
+#     print(index)
+#     process_images_and_update_excel(folder_path, excel_path, personal_prompts)
+
+# Experiment 3
+# excel_path = '/root/dataDisk/Data/Data3.xlsx'
+# base_folder_path = '/root/dataDisk/Experiment3/'
+# folder_paths = [f"{base_folder_path}seed{str(i)}/public_prompt1/" for i in range(1,6)]
+# for index, folder_path in enumerate(folder_paths):
+#     print(index)
+#     process_images_and_update_excel(folder_path, excel_path, personal_prompts)
+
+# Experiment 4
+# excel_path = '/root/dataDisk/Data/Data4.xlsx'
+# base_folder_path = '/root/dataDisk/Experiment4/'
+# folder_paths = [f"{base_folder_path}seed{str(i)}/public_prompt2/" for i in range(1,6)]
+# for index, folder_path in enumerate(folder_paths):
+#     print(index)
+#     process_images_and_update_excel(folder_path, excel_path, personal_prompts)
+
+# Experiment 5
+# excel_path = '/root/dataDisk/Data/Data5.xlsx'
+# base_folder_path = '/root/dataDisk/Experiment5/'
+# folder_paths = [f"{base_folder_path}seed{str(i)}/public_prompt3/" for i in range(1,6)]
+# for index, folder_path in enumerate(folder_paths):
+#     print(index)
+#     process_images_and_update_excel(folder_path, excel_path, personal_prompts)
