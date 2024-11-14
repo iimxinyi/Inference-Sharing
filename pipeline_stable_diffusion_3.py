@@ -687,6 +687,10 @@ class StableDiffusion3Pipeline(DiffusionPipeline, SD3LoraLoaderMixin, FromSingle
         max_sequence_length: int = 256,
         offloading_step: int = 0,
         prompt_unchanged: bool = True,
+        get_public_latents: bool = False,
+        get_personal_latents: bool = False,
+        get_public_immediate_result: bool = False,
+        get_personal_immediate_result: bool = False,
     ):
         r"""
         Function invoked when calling the pipeline for generation.
@@ -871,18 +875,37 @@ class StableDiffusion3Pipeline(DiffusionPipeline, SD3LoraLoaderMixin, FromSingle
                 if self.interrupt:
                     continue
 
-                # !!!!!!!!!!!!!!New Content!!!!!!!!!!!!!!!!!
-                if i < offloading_step and prompt_unchanged == False:
-                    continue
+                if not any([get_public_latents, get_personal_latents, get_public_immediate_result, get_personal_immediate_result]):
+                    if i < offloading_step and prompt_unchanged == False:
+                        continue
+                    if i == offloading_step:
+                        if prompt_unchanged == True:
+                            torch.save(latents.to(torch.device('cuda')), "latents_immediate.pth")
+                        else:
+                            latents = torch.load("latents_immediate.pth")
 
-                if i == offloading_step:
-                    if prompt_unchanged == True:
-                        torch.save(latents.to(torch.device('cuda')), "latents2.pth")
-                    else:
-                        latents = torch.load("latents2.pth")
+                if get_public_latents == True:
+                    torch.save(latents.to(torch.device('cuda')), "latents_" + str(i) + ".pth")
+                if get_public_immediate_result == True:
+                    if i < (offloading_step - 1):
+                        continue
+                    if i == offloading_step - 1:
+                        latents = torch.load("latents_" + str(i) + ".pth")
+                
+                if get_personal_latents == True:
+                    if i < offloading_step:
+                        continue
+                    if i == offloading_step:
+                        latents = torch.load("latents_immediate.pth")
+                    torch.save(latents.to(torch.device('cuda')), "latents_" + str(i) + ".pth")
+                if get_personal_immediate_result == True:
+                    if i < (offloading_step - 1):
+                        continue
+                    if i == offloading_step - 1:
+                        latents = torch.load("latents_" + str(i) + ".pth")
 
-                # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
+                # print(latents.shape)
+                
                 # expand the latents if we are doing classifier free guidance
                 latent_model_input = torch.cat([latents] * 2) if self.do_classifier_free_guidance else latents
                 # broadcast to batch dimension in a way that's compatible with ONNX/Core ML
