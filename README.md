@@ -155,5 +155,9 @@ original: The original image with the prompt unchanged.
 sharing: The new image with the prompt changed.
 ```
 
+## 7 Acknowledge
+[Sentence-Transformer](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2): It maps sentences & paragraphs to a 384 dimensional dense vector space and can be used for tasks like clustering or semantic search.
+[Stable Diffusion 3 Medium](https://huggingface.co/stabilityai/stable-diffusion-3-medium-diffusers/tree/main): It is a wonferful image generation model.
+[DistributedDiffusion](https://github.com/HongyangDu/DistributedDiffusion): It is the first work for inference sharing in wireless networks.
 
 
