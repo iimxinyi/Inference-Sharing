@@ -145,7 +145,7 @@ Baidu Netdisk:
 
 Image naming rules：
 
-```python
+```shell
 x_y_z_original/sharing.png
 x: Original prompt index
 y: New prompt index
@@ -153,6 +153,10 @@ z: The number of common inference steps
 original: The original image with the prompt unchanged.
 sharing: The new image with the prompt changed.
 ```
+
+Demo:
+![image](/Demo/original.png) ![image](/Demo/sharing.png)
+
 
 ## 7 Acknowledge
 [Sentence-Transformer](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2): It maps sentences & paragraphs to a 384 dimensional dense vector space and can be used for tasks like clustering or semantic search.
