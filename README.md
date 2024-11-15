@@ -156,8 +156,8 @@ sharing: The new image with the prompt changed.
 
 Demo:
 <div style="display: flex; justify-content: center; align-items: center;">
-  <img src="/Demo/original.png" alt="Original Image" style="width: 100px; height: auto; margin-right: 10px;">
-  <img src="/Demo/sharing.png" alt="Sharing Image" style="width: 100px; height: auto;">
+  <img src="/Demo/original.png" alt="Original Image" style="width: 500px; height: auto; margin-right: 10px;">
+  <img src="/Demo/sharing.png" alt="Sharing Image" style="width: 500px; height: auto;">
 </div>
 
 
