@@ -27,7 +27,6 @@ ubuntu==20.04  cuda==11.8
 pip install sentence-transformers==3.1.1
 pip install diffusers==0.30.3
 pip install transformers==4.44.2
-pip install --upgrade diffusers transformers
 pip install torch==2.4.1
 pip install accelerate==0.34.2
 pip install protobuf==5.25.2
