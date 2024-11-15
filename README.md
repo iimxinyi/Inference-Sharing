@@ -145,7 +145,7 @@ Baidu Netdisk:
 
 Image naming rules：
 
-```shell
+```python
 x_y_z_original/sharing.png
 x: Original prompt index
 y: New prompt index
