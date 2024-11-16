@@ -139,9 +139,9 @@ All propmpts are listed in `Prompts.xlsx`.
 
 Our generated image is available in:
 
-OneDrive: 
+OneDrive: https://stuhiteducn-my.sharepoint.com/:u:/g/personal/zhuangxinyi_stu_hit_edu_cn/Eb5mtaPI1dJJmhjW7bKJmksBOBnpEr65vyV6fWzdetAljw?e=9nHaQX
 
-Baidu Netdisk:
+Baidu Netdisk: 链接: https://pan.baidu.com/s/1yyt--IdqhWKEobyO9eVwgA 提取码: bgbx 
 
 Image naming rules：
 
@@ -155,6 +155,8 @@ sharing: The new image with the prompt changed.
 ```
 
 Demo:
+Public Prompt: `A cat is relaxing in a peaceful, cozy environment, engaging in gentle, everyday activities.`
+Personal Prompt: `A cat is sleeping peacefully on a sunlit window sill.`
 <div style="display: flex; justify-content: center; align-items: center;">
   <img src="/readme/original.png" alt="Original Image" style="width: 400px; height: auto; margin-right: 10px;">
   <img src="/readme/sharing.png" alt="Sharing Image" style="width: 400px; height: auto;">
