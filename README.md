@@ -155,8 +155,11 @@ sharing: The new image with the prompt changed.
 ```
 
 Demo:
-Public Prompt: `A cat is relaxing in a peaceful, cozy environment, engaging in gentle, everyday activities.`
-Personal Prompt: `A cat is sleeping peacefully on a sunlit window sill.`
+
+Public Prompt (i.e., original prompt x): `A cat is relaxing in a peaceful, cozy environment, engaging in gentle, everyday activities.`
+
+Personal Prompt (i.e., new prompt y): `A cat is sleeping peacefully on a sunlit window sill.`
+
 <div style="display: flex; justify-content: center; align-items: center;">
   <img src="/readme/original.png" alt="Original Image" style="width: 400px; height: auto; margin-right: 10px;">
   <img src="/readme/sharing.png" alt="Sharing Image" style="width: 400px; height: auto;">
