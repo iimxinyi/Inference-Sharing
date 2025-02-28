@@ -685,7 +685,7 @@ class StableDiffusion3Pipeline(DiffusionPipeline, SD3LoraLoaderMixin, FromSingle
         callback_on_step_end: Optional[Callable[[int, int, Dict], None]] = None,
         callback_on_step_end_tensor_inputs: List[str] = ["latents"],
         max_sequence_length: int = 256,
-        offloading_step: int = 0,
+        common_step: int = 0,
         prompt_unchanged: bool = True,
         get_public_latents: bool = False,
         get_personal_latents: bool = False,
@@ -876,9 +876,9 @@ class StableDiffusion3Pipeline(DiffusionPipeline, SD3LoraLoaderMixin, FromSingle
                     continue
 
                 if not any([get_public_latents, get_personal_latents, get_public_immediate_result, get_personal_immediate_result]):
-                    if i < offloading_step and prompt_unchanged == False:
+                    if i < common_step and prompt_unchanged == False:
                         continue
-                    if i == offloading_step:
+                    if i == common_step:
                         if prompt_unchanged == True:
                             torch.save(latents.to(torch.device('cuda')), "latents_immediate.pth")
                         else:
@@ -887,21 +887,21 @@ class StableDiffusion3Pipeline(DiffusionPipeline, SD3LoraLoaderMixin, FromSingle
                 if get_public_latents == True:
                     torch.save(latents.to(torch.device('cuda')), "latents_" + str(i) + ".pth")
                 if get_public_immediate_result == True:
-                    if i < (offloading_step - 1):
+                    if i < (common_step - 1):
                         continue
-                    if i == offloading_step - 1:
+                    if i == common_step - 1:
                         latents = torch.load("latents_" + str(i) + ".pth")
                 
                 if get_personal_latents == True:
-                    if i < offloading_step:
+                    if i < common_step:
                         continue
-                    if i == offloading_step:
+                    if i == common_step:
                         latents = torch.load("latents_immediate.pth")
                     torch.save(latents.to(torch.device('cuda')), "latents_" + str(i) + ".pth")
                 if get_personal_immediate_result == True:
-                    if i < (offloading_step - 1):
+                    if i < (common_step - 1):
                         continue
-                    if i == offloading_step - 1:
+                    if i == common_step - 1:
                         latents = torch.load("latents_" + str(i) + ".pth")
 
                 # print(latents.shape)
