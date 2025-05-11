@@ -139,8 +139,6 @@ All propmpts are listed in `Prompts.xlsx`.
 
 Our generated image is available in:
 
-OneDrive: https://stuhiteducn-my.sharepoint.com/:u:/g/personal/zhuangxinyi_stu_hit_edu_cn/Eb5mtaPI1dJJmhjW7bKJmksBOBnpEr65vyV6fWzdetAljw?e=9nHaQX
-
 Baidu Netdisk: 链接: https://pan.baidu.com/s/1yyt--IdqhWKEobyO9eVwgA 提取码: bgbx 
 
 Image naming rules：
